@@ -4,7 +4,7 @@
 :root {
   --color-primary: #1B1464;
 
-  --background-light: #FFFFFF;
+  --background-light: #e7e7ed;
 }
 
 @theme {
@@ -19,4 +19,10 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 650;
+  color: #FFFFFF;
 }

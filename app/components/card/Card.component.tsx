@@ -1,4 +1,4 @@
-
+import "./Card.css";
 
 type CardProps = {
   title: string;
@@ -8,14 +8,19 @@ type CardProps = {
 
 export function Card(_props: CardProps) {
   return (
-    <article className="card">
-      <img src={_props.thumbnail} alt={_props.title} />
-      <h2>{_props.title}</h2>
-      <ul>
-        {_props.tags.map((tag) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
+    <article
+      className="card"
+      style={{ backgroundImage: `url(${_props.thumbnail})` }}
+      role="article"
+    >
+      <div className="card__content">
+        <h2>{_props.title}</h2>
+        <ul>
+          {_props.tags.map((tag) => (
+            <li key={tag} data-testid="card-tag">{tag}</li>
+          ))}
+        </ul>
+      </div>
     </article>
   );
 }
