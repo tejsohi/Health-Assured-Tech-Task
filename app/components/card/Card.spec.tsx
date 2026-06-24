@@ -16,9 +16,8 @@ describe("When rendering the card component", () => {
 
   it("should render a thumbnail image", () => {
     render(<Card {...mockCard} />);
-    const img = screen.getByRole("img");
-    expect(img).toBeTruthy();
-    expect(img.getAttribute("src")).toBe(mockCard.thumbnail);
+    const card = screen.getByRole("card");
+    expect(card.style.backgroundImage).toBe(`url("${mockCard.thumbnail}")`);
   });
 
   it("should render the card tags", () => {
