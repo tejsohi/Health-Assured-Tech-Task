@@ -7,5 +7,15 @@ type CardProps = {
 };
 
 export function Card(_props: CardProps) {
-  return null;
+  return (
+    <article className="card">
+      <img src={_props.thumbnail} alt={_props.title} />
+      <h2>{_props.title}</h2>
+      <ul>
+        {_props.tags.map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+    </article>
+  );
 }

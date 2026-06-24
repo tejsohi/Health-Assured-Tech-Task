@@ -12,5 +12,11 @@ type CardsProps = {
 };
 
 export function Cards({ cards }: CardsProps) {
-  return null;
+  return (
+    <>
+      {cards.map((card) => (
+        <Card key={card.title} {...card} />
+      ))}
+    </>
+  );
 }
