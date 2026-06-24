@@ -1,0 +1,37 @@
+import { render, screen } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
+import { Card } from "./Card.component";
+
+const mockCard = {
+  title: "Test Card Title",
+  thumbnail: "https://example.com/image.jpg",
+  tags: ["Health", "Wellbeing", "Fitness"],
+};
+
+describe("When rendering the card component", () => {
+  it("should render the card title", () => {
+    render(<Card {...mockCard} />);
+    expect(screen.getByText(mockCard.title)).toBeTruthy();
+  });
+
+  it("should render a thumbnail image", () => {
+    render(<Card {...mockCard} />);
+    const img = screen.getByRole("img");
+    expect(img).toBeTruthy();
+    expect(img.getAttribute("src")).toBe(mockCard.thumbnail);
+  });
+
+  it("should render the card tags", () => {
+    render(<Card {...mockCard} />);
+    mockCard.tags.forEach((tag) => {
+      expect(screen.getByText(tag)).toBeTruthy();
+    });
+  });
+
+  it("should render no more than 3 tags", () => {
+    const manyTags = ["Health", "Wellbeing", "Fitness", "Mental Health", "Support"];
+    render(<Card title={mockCard.title} thumbnail={mockCard.thumbnail} tags={manyTags} />);
+    const tagElements = screen.getAllByTestId("card-tag");
+    expect(tagElements.length).toBeLessThanOrEqual(3);
+  });
+});
