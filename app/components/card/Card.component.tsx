@@ -16,7 +16,7 @@ export function Card(_props: CardProps) {
       <div className="card__content">
         <h2>{_props.title}</h2>
         <ul>
-          {_props.tags.map((tag) => (
+          {_props.tags.slice(0, 3).map((tag) => (
             <li key={tag} data-testid="card-tag">{tag}</li>
           ))}
         </ul>
