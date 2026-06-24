@@ -8,10 +8,10 @@ type CardProps = {
 
 export function Card(_props: CardProps) {
   return (
-    <article
+    <div
       className="card"
       style={{ backgroundImage: `url(${_props.thumbnail})` }}
-      role="article"
+      role="card"
     >
       <div className="card__content">
         <h2>{_props.title}</h2>
@@ -21,6 +21,6 @@ export function Card(_props: CardProps) {
           ))}
         </ul>
       </div>
-    </article>
+    </div>
   );
 }
