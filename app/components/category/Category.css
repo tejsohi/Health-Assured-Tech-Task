@@ -1,11 +1,13 @@
-.cards-container {
+.resource-catalogue {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     padding: 1.5rem;
 }
 
-.cards-container > * {
+.resource-catalogue__category {
     flex: 1 1 calc(33.333% - 1.5rem);
-    min-width: 250px;
+}
+.resource-catalogue__heading {
+    color: black;
 }
