@@ -21,3 +21,10 @@ h1 {
     color: black;
     margin-left: 1.5rem;
 }
+
+.filtering-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+}
