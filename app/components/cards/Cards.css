@@ -1,6 +1,11 @@
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     padding: 1.5rem;
+}
+
+.cards-container > * {
+    flex: 1 1 calc(33.333% - 1.5rem);
+    min-width: 250px;
 }
