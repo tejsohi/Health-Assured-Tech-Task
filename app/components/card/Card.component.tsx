@@ -23,8 +23,10 @@ export function Card(_props: CardProps) {
             <Tag key={tag} text={tag} />
           ))}
         </ul>
-        <span className="card__duration">{_props.duration} min</span>
-        <span className="card__date">  {_props.dateUploaded.toLocaleDateString("en-GB")}</span>
+        <div className="card__info">
+          <span className="card__duration">{_props.duration} min</span>
+          <span className="card__date">  {_props.dateUploaded.toLocaleDateString("en-GB")}</span>
+        </div>
       </div>
     </div>
   );
