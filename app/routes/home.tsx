@@ -1,7 +1,10 @@
+import { useState } from "react";
 import mockData from "~/mocks/mock.json";
 import type { Route } from "./+types/home";
 import './home.css';
 import { Category } from "~/components/category/Category.component";
+import { SearchBox } from "~/components/filtering/Filtering.component";
+import { filterResources } from "~/components/filtering/Filtering.component";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,12 +14,16 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const [query, setQuery] = useState("");
+  const filtered = filterResources(mockData, query);
+
   return (
     <div className="home-container">
       <h1>Resource Center</h1>
       <span className="home-subtitle">Welcome to the resource center</span>
       <span className="home-description">Here you can find a variety of resources to help you with your health and wellness journey.</span>
-      <Category resources={mockData} />
+      <SearchBox value={query} onChange={setQuery} />
+      <Category resources={filtered} />
     </div>
-  )
+  );
 }
