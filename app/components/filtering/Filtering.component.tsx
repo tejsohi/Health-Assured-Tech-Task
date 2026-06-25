@@ -17,7 +17,7 @@ type SearchBoxProps = {
 
 export function SearchBox({ value = "", onChange }: SearchBoxProps) {
   return (
-      <>
+      <div className="search-container">
           <span className="search-label">Search resources</span>
           <input
               type="search"
@@ -25,6 +25,6 @@ export function SearchBox({ value = "", onChange }: SearchBoxProps) {
               value={value}
               onChange={(e) => onChange(e.target.value)}
           />
-      </>
+      </div>
   );
 }
