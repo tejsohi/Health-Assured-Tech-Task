@@ -1,6 +1,7 @@
 import { Cards } from "~/components/cards/Cards.component";
 import mockData from "~/mocks/mock.json";
 import type { Route } from "./+types/home";
+import './home.css';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -10,5 +11,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Cards cards={mockData} />;
+  return (
+    <div className="home-container">
+      <h1>Resource Center</h1>
+      <span className="home-subtitle">Welcome to the resource center</span>
+      <span className="home-description">Here you can find a variety of resources to help you with your health and wellness journey.</span>
+      <Cards cards={mockData} />;
+    </div>
+  )
 }
