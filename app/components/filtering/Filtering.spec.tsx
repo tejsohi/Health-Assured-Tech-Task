@@ -8,7 +8,7 @@ const mockResources: Resource[] = [
   { id: "003", category: "Fitness", title: "Morning Stretch", thumbnail: "", tags: ["energy", "routine"], duration: 10, description: "", date_uploaded: "2025-08-05" },
 ];
 
-describe("filterResources", () => {
+describe("when using the filterResources function", () => {
   it("should return all resources when query is empty", () => {
     const result = filterResources(mockResources, "");
     expect(result).toHaveLength(3);
