@@ -1,3 +1,4 @@
+import { Tag } from "../tag/Tag.component";
 import "./Card.css";
 
 type CardProps = {
@@ -15,9 +16,9 @@ export function Card(_props: CardProps) {
     >
       <div className="card__content">
         <h2>{_props.title}</h2>
-        <ul>
+        <ul className="card__tags">
           {_props.tags.slice(0, 3).map((tag) => (
-            <li key={tag} data-testid="card-tag">{tag}</li>
+            <Tag key={tag} text={tag} />
           ))}
         </ul>
       </div>
