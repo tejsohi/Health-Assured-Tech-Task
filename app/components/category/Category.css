@@ -1,0 +1,13 @@
+.resource-catalogue {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.resource-catalogue__category {
+    flex: 1 1 calc(33.333% - 1.5rem);
+}
+.resource-catalogue__heading {
+    color: black;
+}
