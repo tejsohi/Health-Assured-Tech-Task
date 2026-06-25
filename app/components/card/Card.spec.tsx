@@ -7,7 +7,9 @@ const mockCard = {
   thumbnail: "https://example.com/image.jpg",
   tags: ["Health", "Wellbeing", "Fitness"],
   duration: 10,
-  dateUploaded: new Date("2023-01-01")
+  dateUploaded: new Date("2023-01-01"),
+  description: "This is a test description for the card component.",
+  category: "Health",
 };
 
 describe("When rendering the card component", () => {
@@ -18,7 +20,7 @@ describe("When rendering the card component", () => {
 
   it("should render a thumbnail image", () => {
     render(<Card {...mockCard} />);
-    const card = screen.getByRole("card");
+    const card = screen.getByRole("button");
     expect(card.style.backgroundImage).toBe(`url("${mockCard.thumbnail}")`);
   });
 
@@ -31,7 +33,7 @@ describe("When rendering the card component", () => {
 
   it("should render no more than 3 tags", () => {
     const manyTags = ["Health", "Wellbeing", "Fitness", "Mental Health", "Support"];
-    render(<Card title={mockCard.title} thumbnail={mockCard.thumbnail} tags={manyTags} duration={mockCard.duration} dateUploaded={mockCard.dateUploaded} />);
+    render(<Card title={mockCard.title} thumbnail={mockCard.thumbnail} tags={manyTags} duration={mockCard.duration} dateUploaded={mockCard.dateUploaded} description={mockCard.description} category={mockCard.category} />);
     const tagElements = document.querySelectorAll(".tag");
     expect(tagElements.length).toBeLessThanOrEqual(3);
   });
