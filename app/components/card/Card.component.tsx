@@ -6,6 +6,7 @@ type CardProps = {
   thumbnail: string;
   tags: string[];
   duration: number;
+  dateUploaded: Date;
 };
 
 export function Card(_props: CardProps) {
@@ -22,7 +23,8 @@ export function Card(_props: CardProps) {
             <Tag key={tag} text={tag} />
           ))}
         </ul>
-        <span className="card__duration">{_props.duration} min read/watch time</span>
+        <span className="card__duration">{_props.duration} min</span>
+        <span className="card__date">  {_props.dateUploaded.toLocaleDateString("en-GB")}</span>
       </div>
     </div>
   );
