@@ -6,7 +6,8 @@ const mockCard = {
   title: "Test Card Title",
   thumbnail: "https://example.com/image.jpg",
   tags: ["Health", "Wellbeing", "Fitness"],
-  duration: 10
+  duration: 10,
+  dateUploaded: new Date("2023-01-01")
 };
 
 describe("When rendering the card component", () => {
@@ -30,13 +31,18 @@ describe("When rendering the card component", () => {
 
   it("should render no more than 3 tags", () => {
     const manyTags = ["Health", "Wellbeing", "Fitness", "Mental Health", "Support"];
-    render(<Card title={mockCard.title} thumbnail={mockCard.thumbnail} tags={manyTags} duration={mockCard.duration} />);
+    render(<Card title={mockCard.title} thumbnail={mockCard.thumbnail} tags={manyTags} duration={mockCard.duration} dateUploaded={mockCard.dateUploaded} />);
     const tagElements = document.querySelectorAll(".tag");
     expect(tagElements.length).toBeLessThanOrEqual(3);
   });
 
   it("should render a read/watch time in minutes", () => {
     render(<Card {...mockCard} duration={mockCard.duration} />);
-    expect(screen.getByText(`${mockCard.duration} min read/watch time`)).toBeTruthy();
+    expect(screen.getByText(`${mockCard.duration} min`)).toBeTruthy();
+  });
+
+  it("should render the date uploaded", () => {
+    render(<Card {...mockCard} dateUploaded={mockCard.dateUploaded} />);
+    expect(screen.getByText(mockCard.dateUploaded.toLocaleDateString())).toBeTruthy();
   });
 });

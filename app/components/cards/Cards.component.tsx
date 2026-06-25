@@ -9,7 +9,12 @@ export function Cards({ cards }: CardsProps) {
   return (
     <div className="cards-container">
       {cards.map((card) => (
-        <Card key={card.id} {...card} />
+        <Card key={card.id}
+          title={card.title}
+          thumbnail={card.thumbnail}
+          tags={card.tags}
+          duration={card.duration}
+          dateUploaded={new Date(card.date_uploaded)} />
       ))}
     </div>
   );
