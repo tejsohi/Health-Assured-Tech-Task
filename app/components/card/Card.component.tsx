@@ -5,6 +5,7 @@ type CardProps = {
   title: string;
   thumbnail: string;
   tags: string[];
+  duration: number;
 };
 
 export function Card(_props: CardProps) {
@@ -21,6 +22,7 @@ export function Card(_props: CardProps) {
             <Tag key={tag} text={tag} />
           ))}
         </ul>
+        <span className="card__duration">{_props.duration} min read/watch time</span>
       </div>
     </div>
   );
