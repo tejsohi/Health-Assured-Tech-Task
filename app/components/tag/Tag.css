@@ -1,0 +1,9 @@
+.tag-container {
+  display: inline-block;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border: 1px solid #d0d5dd;
+  border-radius: 9999px;
+
+}

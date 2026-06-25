@@ -33,3 +33,8 @@
     -webkit-mask-image: linear-gradient(to bottom, transparent 35%, black 65%);
     border-radius: inherit;
 }
+
+.card__tags {
+    display: flex;
+    gap: 0.5rem;
+}

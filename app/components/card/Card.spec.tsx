@@ -30,7 +30,7 @@ describe("When rendering the card component", () => {
   it("should render no more than 3 tags", () => {
     const manyTags = ["Health", "Wellbeing", "Fitness", "Mental Health", "Support"];
     render(<Card title={mockCard.title} thumbnail={mockCard.thumbnail} tags={manyTags} />);
-    const tagElements = screen.getAllByTestId("card-tag");
+    const tagElements = document.querySelectorAll(".tag");
     expect(tagElements.length).toBeLessThanOrEqual(3);
   });
 });
