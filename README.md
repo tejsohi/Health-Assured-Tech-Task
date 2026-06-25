@@ -1,87 +1,39 @@
-# Welcome to React Router!
+# Health Assured - Frontend Tech Task for Junior and Middleweight Developer Role
+Single Page App, built in React that groups resources by category on first load, with:
+- Sorting catergories alphabetically
+- Filter by title/tags
+- View more information in a modal when clicking on a card
 
-A modern, production-ready template for building full-stack React applications using React Router.
+# Tech stack used and why
+- Vite + React + Typescript - React and Typescript was a requirement from HA. Vite works well with both. It is a popular and widley used build tool that works well with React and Typescript and provides a good developer experience
+- Vitest - Already using vite, so makes sense to use vitest. It is a very popular tool for unit testing and again provides a good developer experience
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Running the application. 
+Once the application is cloned
 
-## Features
+Run `npm install`
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+Then run `npm run dev`
 
-## Getting Started
+The application should run on http://localhost:5173
 
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## Codebase structure
+Each feature and components are contained within their own folders. This allows for resuablilty should the need for the components to be used elsewhere rather than duplicating code.
+For example a card component will have the following structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+app
+├─ components
+             ├─card
+                    ├─ Card.component.tsx
+                       Card.css
+                       Card.spec.tsx
 ```
 
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+## What I would do with more time
+- Responsiveness for various screen size including mobile and tablet
+- Acessbility - including screen reader support and keyboard navigation
+- Not hard coding strings and making use of language packs(easier for translations)
+- Having specific resuable components like headers, buttons, inputs etc.
+- Have a dedicated utils area/files for resuability
+- In the event there was a slow API, have skeleton loaders
