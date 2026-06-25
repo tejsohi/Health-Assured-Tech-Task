@@ -14,6 +14,8 @@ export function Cards({ cards }: CardsProps) {
           thumbnail={card.thumbnail}
           tags={card.tags}
           duration={card.duration}
+          description={card.description}
+          category={card.category}
           dateUploaded={new Date(card.date_uploaded)} />
       ))}
     </div>
